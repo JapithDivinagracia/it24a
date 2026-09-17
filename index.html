@@ -41,6 +41,11 @@ function addTaskItem(taskText){
     const doneBtn = createDoneButton(li);
     li.appendChild(doneBtn);
 
+    //call createEditButton() function
+    const editBtn = createEditButton(li);
+    li.appendChild(editBtn);
+
+
 }
 
 function createDoneButton(li){
@@ -64,6 +69,16 @@ function createDoneButton(li){
     
         return doneBtn;
     }
+
+     function createEditButton(li,taskSpan){
+         const editBtn = document.createElement("button");
+         editBtn.textContent = "Edit";
+         editBtn.style.marginLeft="8px";
+         editBtn.onclick = () => handleEditClick(li);
+         return editBtn;
+
+    }
+
 
 
 
